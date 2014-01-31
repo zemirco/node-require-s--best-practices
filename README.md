@@ -3,92 +3,92 @@
 
 Some best practices / conventions when using Node's `require()`.
 
-1. [Order]()
+##### 1. [Order](https://github.com/zeMirco/node-require-s--best-practices/blob/master/require-order/index.js)
 
-    Have a consistent order when requiring modules.
-  
-      - core modules first
-      - then public ones from npm / `node_modules`
-      - then your own ones
-      
-    ```js
-    // 1. core modules
-    var fs = require('fs');
-    var http = require('http');
-    
-    // 2. public modules from npm
-    var express = require('express');
-    var uuid = require('node-uuid');
-    
-    // 3. your own modules from file
-    var myMod = require('./mod.js');
-    ```
-    
-2. [Naming]()
+Have a consistent order when requiring modules.
 
-    Give corresponding variable names.
-    
-    ```js
-    // don't
-    var save = require('./remove');
-    
-    // do
-    var remove = require('./remove');
-    ```
-    
-3. [JSON]()
+- core modules first
+- then public ones from npm / `node_modules`
+- then your own ones
 
-    Include `.json` in filename.
-    
-    ```js
-    // don't
-    var data = require('./data');
-    
-    // do
-    var data = require('./data.json');
-    ```
-    
-4. [Folder]()
+```js
+// 1. core modules
+var fs = require('fs');
+var http = require('http');
 
-    Append slash when requiring `./FOLDER/index.js`
-    
-    ```js
-    // don't
-    var data = require('./data');
-    
-    // do
-    var data = require('./data/');
-    ```
-    
-5. [Override core modules]()
+// 2. public modules from npm
+var express = require('express');
+var uuid = require('node-uuid');
 
-    Do not override core modules.
+// 3. your own modules from file
+var myMod = require('./mod.js');
+```
     
-    ```js
-    // don't
-    var fs = require('./fs');
-    
-    // do
-    var fs = require('fs');
-    var myFs = require('./fs');
-    
-    // or even better
-    var fs = require('fs');
-    var myFs = require('./my-fs');
-    ```
-    
-6. [Nested objects]()
+##### 2. [Naming](https://github.com/zeMirco/node-require-s--best-practices/blob/master/require-names/index.js)
 
-    Require module first and then create shortcut.
+Give corresponding variable names.
+
+```js
+// don't
+var save = require('./remove');
+
+// do
+var remove = require('./remove');
+```
     
-    ```js
-    // don't
-    var readFile = require('fs').readFile;
+##### 3. [JSON](https://github.com/zeMirco/node-require-s--best-practices/blob/master/require-json/index.js)
+
+Include `.json` in filename.
+
+```js
+// don't
+var data = require('./data');
+
+// do
+var data = require('./data.json');
+```
     
-    // do
-    var fs = require('fs');
-    var readFile = fs.readFile;
-    ```
+##### 4. [Folder](https://github.com/zeMirco/node-require-s--best-practices/blob/master/require-folder/index.js)
+
+Append slash when requiring `./FOLDER/index.js`
+
+```js
+// don't
+var data = require('./data');
+
+// do
+var data = require('./data/');
+```
+    
+##### 5. [Override core modules](https://github.com/zeMirco/node-require-s--best-practices/blob/master/override-core-modules/index.js)
+
+Do not override core modules.
+
+```js
+// don't
+var fs = require('./fs');
+
+// do
+var fs = require('fs');
+var myFs = require('./fs');
+
+// or even better
+var fs = require('fs');
+var myFs = require('./my-fs');
+```
+    
+6. [Nested objects](https://github.com/zeMirco/node-require-s--best-practices/blob/master/require-nested-method/index.js)
+
+Require module first and then create shortcut.
+
+```js
+// don't
+var readFile = require('fs').readFile;
+
+// do
+var fs = require('fs');
+var readFile = fs.readFile;
+```
 
 ## Imprint
 
