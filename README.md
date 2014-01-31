@@ -77,7 +77,7 @@ var fs = require('fs');
 var myFs = require('./my-fs');
 ```
     
-6. [Nested objects](https://github.com/zeMirco/node-require-s--best-practices/blob/master/require-nested-method/index.js)
+##### 6. [Nested objects](https://github.com/zeMirco/node-require-s--best-practices/blob/master/require-nested-method/index.js)
 
 Require module first and then create shortcut.
 
