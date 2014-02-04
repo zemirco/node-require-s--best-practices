@@ -1,4 +1,3 @@
-
 # Node.js require(s) best practices
 
 Some best practices / conventions when using Node's `require()`.
@@ -91,7 +90,7 @@ var readFile = fs.readFile;
 ```
 
 
-#### 7. [Module files](https://github.com/zeMirco/node-require-s--best-practices/blob/master/require-module-files/index.js)
+##### 7. [Module files](https://github.com/zeMirco/node-require-s--best-practices/blob/master/require-module-files/index.js)
 
 Organise your modules so that you can require sub-files
 
