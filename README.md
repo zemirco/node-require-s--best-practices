@@ -23,7 +23,7 @@ var uuid = require('node-uuid');
 // 3. your own modules from file
 var myMod = require('./mod.js');
 ```
-    
+
 ##### 2. [Naming](https://github.com/zeMirco/node-require-s--best-practices/blob/master/require-names/index.js)
 
 Give corresponding variable names.
@@ -35,7 +35,7 @@ var save = require('./remove');
 // do
 var remove = require('./remove');
 ```
-    
+
 ##### 3. [JSON](https://github.com/zeMirco/node-require-s--best-practices/blob/master/require-json/index.js)
 
 Include `.json` in filename.
@@ -47,7 +47,7 @@ var data = require('./data');
 // do
 var data = require('./data.json');
 ```
-    
+
 ##### 4. [Folder](https://github.com/zeMirco/node-require-s--best-practices/blob/master/require-folder/index.js)
 
 Append slash when requiring `./FOLDER/index.js`
@@ -59,7 +59,7 @@ var data = require('./data');
 // do
 var data = require('./data/');
 ```
-    
+
 ##### 5. [Override core modules](https://github.com/zeMirco/node-require-s--best-practices/blob/master/override-core-modules/index.js)
 
 Do not override core modules.
@@ -76,7 +76,7 @@ var myFs = require('./fs');
 var fs = require('fs');
 var myFs = require('./my-fs');
 ```
-    
+
 ##### 6. [Nested objects](https://github.com/zeMirco/node-require-s--best-practices/blob/master/require-nested-method/index.js)
 
 Require module first and then create shortcut.
@@ -88,6 +88,20 @@ var readFile = require('fs').readFile;
 // do
 var fs = require('fs');
 var readFile = fs.readFile;
+```
+
+
+#### 7. [Module files](https://github.com/zeMirco/node-require-s--best-practices/blob/master/require-module-files/index.js)
+
+Organise your modules so that you can require sub-files
+
+```js
+// Don't
+var isoblend = require("isoblend")
+var normal = isoblend.normal
+
+// Do
+normal = require("isoblend/normal")
 ```
 
 ## Imprint
