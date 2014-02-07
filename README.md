@@ -95,11 +95,11 @@ var readFile = fs.readFile;
 Organise your modules so that you can require sub-files
 
 ```js
-// Don't
+// don't
 var isoblend = require("isoblend")
 var normal = isoblend.normal
 
-// Do
+// do
 normal = require("isoblend/normal")
 ```
 
