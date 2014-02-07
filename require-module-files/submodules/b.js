@@ -1,0 +1,4 @@
+
+module.exports = function() {
+  console.log('some text from module b');
+};
